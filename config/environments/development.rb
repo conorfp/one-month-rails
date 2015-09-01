@@ -38,8 +38,12 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  
+  #Required for Heroku
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end
 
 class Application < Rails::Application
   config.web_console.whitelisted_ips = '74.113.53.193'
 end
+
